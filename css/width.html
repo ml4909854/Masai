@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Width vs Max-Width vs Min-Width</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .common {
+      height: 100px;
+      margin: 15px 0;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+
+    /* 1️⃣ Fixed width */
+    .box-width {
+      width: 400px;
+      background: #e74c3c;
+    }
+
+    /* 2️⃣ Max width */
+    .box-max-width {
+      width: 100%;
+      max-width: 400px;
+      background: #3498db;
+    }
+
+    /* 3️⃣ Min width */
+    .box-min-width {
+      min-width: 400px;
+      background: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Width vs Max-Width vs Min-Width Demo</h1>
+  <p>👉 Browser ko chhota–bada karke dekho</p>
+
+  <h2>1️⃣ width: 400px (FIXED)</h2>
+  <div class="common box-width">
+    width: 400px (screen chhoti ho tab bhi 400px)
+  </div>
+
+  <h2>2️⃣ max-width: 400px (RESPONSIVE)</h2>
+  <div class="common box-max-width">
+    max-width: 400px (screen chhoti → shrink, badi → 400px)
+  </div>
+
+  <h2>3️⃣ min-width: 400px (MIN LIMIT)</h2>
+  <div class="common box-min-width">
+    min-width: 400px (screen chhoti → scroll aayega)
+  </div>
+
+</body>
+</html>
