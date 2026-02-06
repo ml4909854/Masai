@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown Menu</title>
+</head>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: gray;
+}
+
+.list1 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.list1 > li {
+    list-style: none;
+    padding: 10px 60px;
+    position: relative;   /* IMPORTANT */
+}
+
+.list1 > li:hover {
+    background-color: green;
+}
+
+/* Dropdown menu */
+.list2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: lightgray;
+    padding: 0;
+}
+
+.list2 li {
+    list-style: none;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.list2 li:hover {
+    background-color: green;
+}
+
+/* Show dropdown on hover */
+.hover:hover .list2 {
+    display: block;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-size: 50px;
+}
+</style>
+
+<body>
+
+<div class="container">
+    <ul class="list1">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contacts</li>
+
+        <li class="hover">
+            Shopping
+            <ul class="list2">
+                <li>Shirt</li>
+                <li>T-Shirt</li>
+                <li>Trousers</li>
+                <li>Pant</li>
+                <li>Jeans</li>
+            </ul>
+        </li>
+
+        <li>Help</li>
+    </ul>
+</div>
+
+<div class="text">
+    <h1>Dropdown Menu</h1>
+</div>
+
+</body>
+</html>
