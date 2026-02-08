@@ -45,3 +45,9 @@ class CarName{
 
 const Mahesh = new CarName("Volvo" , 2000)
 console.log(Mahesh.age())
+
+
+let arr = [1 , 4, ,5 ,6,6,8]
+const result = arr.map((ele , index , arr)=>{
+   console.log(ele , index , arr) 
+})
