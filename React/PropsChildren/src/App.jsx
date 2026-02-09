@@ -18,7 +18,7 @@ const App = () => {
   {/* <CreateContext/> */}
   {/* <UseState/> */}
   {/* <UseEffect/> */}
-  <UseCallback/>
+  {/* <UseCallback/> */}
    </>
   )
 }
