@@ -1,9 +1,9 @@
-import Counter from "./Counter";
+import FetchTodos from "./FetchTodos";
 const App = () => {
   return (
     <>
-        <Counter/>
-     
+        {/* <Counter/> */}
+       <FetchTodos/>
     </>
   );
 };
