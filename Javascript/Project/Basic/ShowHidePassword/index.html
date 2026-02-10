@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowHidePassword</title>
+</head>
+
+<body>
+    
+        <input type="password" placeholder="Enter password" name="" id="password">
+        <button id="btn">show</button>
+    
+    <script>
+        const password = document.getElementById("password")
+        const btn = document.getElementById("btn")
+
+        let pass;
+        password.addEventListener("input", (e) => {
+            pass = e.target.value
+
+        })
+        btn.addEventListener("click", () => {
+            if (password.type === "password" && pass.length>0) {
+                password.type = "text"
+                btn.innerText = "Hide"
+            } else {
+                password.type = "password"
+                btn.innerText = "Show"
+            }
+        })
+    </script>
+</body>
+
+</html>

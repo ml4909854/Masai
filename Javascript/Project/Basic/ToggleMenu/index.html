@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Menu</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            display: none;
+            width: 100%;
+        }
+
+        #container.show {
+            display: block;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            background-color: red;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+
+        li:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">Toggle Menu</button>
+
+    <div id="container">
+        <ul>
+            <li>Home</li>
+            <li>News</li>
+            <li>Contact</li>
+            <li>About</li>
+        </ul>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const container = document.getElementById("container");
+
+        btn.addEventListener("click", () => {
+            container.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>

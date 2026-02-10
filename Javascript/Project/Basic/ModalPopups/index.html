@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #container {
+            position: fixed;
+            inset: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #overlayContent {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+
+            background-color: white;
+
+        }
+
+        #crossBtn {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">Login</button>
+
+    <div id="container">
+        <div id="overlayContent">
+            <button id="crossBtn">✖</button>
+            <input type="text" placeholder="Username"><br><br>
+            <input type="password" placeholder="Password">
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById("container");
+        const crossBtn = document.getElementById("crossBtn");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            container.style.display = "flex";
+        });
+
+        crossBtn.addEventListener("click", () => {
+            container.style.display = "none";
+        });
+
+
+
+        container.addEventListener("click", () => {
+            container.style.display = "none";
+        });
+
+        // Click inside modal → do nothing
+        overlayContent.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                container.style.display = "none";
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

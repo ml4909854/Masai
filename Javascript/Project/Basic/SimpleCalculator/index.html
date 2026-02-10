@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            border: 1px solid #333;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <div>
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">*</button>
+            <button onclick="calculate('/')">/</button>
+        </div>
+
+        <h3 id="result">Result: </h3>
+    </div>
+
+    <script>
+        function calculate(operator) {
+            const num1 = Number(document.getElementById("num1").value);
+            const num2 = Number(document.getElementById("num2").value);
+            const result = document.getElementById("result");
+
+            if (operator === '/' && num2 === 0) {
+                result.innerText = "Result: Cannot divide by 0";
+                return;
+            }
+
+            let output;
+
+            if (operator === '+') {
+                output = num1 + num2;
+            } else if (operator === '-') {
+                output = num1 - num2;
+            } else if (operator === '*') {
+                output = num1 * num2;
+            } else if (operator === '/') {
+                output = num1 / num2;
+            }
+
+            result.innerText = "Result: " + output;
+        }
+    </script>
+</body>
+</html>
