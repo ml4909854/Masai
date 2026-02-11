@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="question"></h1>
+        <div id="buttonContainer">
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <button id="nextBtn"></button>
+
+        <h1 id="result"></h1>
+    </div>
+    <script>
+
+
+
+        let arr = [
+            {
+                "question": "Capital of India?",
+                "options": ["Delhi", "Mumbai", "Chennai", "Kolkata"],
+                "correct": "Delhi"
+            },
+            {
+                "question": "Which language runs in browser?",
+                "options": ["Java", "C", "Python", "JavaScript"],
+                "correct": "JavaScript"
+            },
+            {
+                "question": "Which symbol is used for strict equality?",
+                "options": ["==", "=", "===", "!="],
+                "correct": "==="
+            },
+            {
+                "question": "Which method adds item to end of array?",
+                "options": ["push()", "pop()", "shift()", "slice()"],
+                "correct": "push()"
+            },
+            {
+                "question": "Where is localStorage stored?",
+                "options": ["Server", "Database", "Browser", "RAM"],
+                "correct": "Browser"
+            }
+        ]
+
+        // first step is two give the index where our quiz start.
+        // I think it is start from 0 
+        // after that give him a score
+
+        let currentQuestionIndex = 0
+        let score = 0
+
+        const question = document.getElementById("question")
+        const buttonContainer = document.getElementById("buttonContainer")
+        const result = document.getElementById("result")
+        const nextBtn = document.getElementById("nextBtn")
+
+        // How I think first step the quiz start with index 0 first wher
+        // score is also and no next button previousely
+
+        function startQuiz() {
+            let ques = arr[currentQuestionIndex].question
+            let quesNumber = currentQuestionIndex + 1
+            question.innerHTML = `${quesNumber}. ${ques}`
+            nextBtn.innerHTML = "next"
+            showOption()
+        }
+
+         function showOption(){
+            buttonContainer.innerHTML = ""
+            arr[currentQuestionIndex].options.forEach((ele , index)=>{
+                let button = document.createElement("button")
+                button.innerHTML = ele
+                let br = document.createElement("br")
+                buttonContainer.append(button , br)
+
+                button.addEventListener("click" , ()=>{
+                    let allbuttons = document.querySelectorAll("#buttonContainer button")
+                    allbuttons.forEach(btn=>btn.disabled = true)
+
+                    if(ele === arr[currentQuestionIndex].correct){
+                        button.style.backgroundColor = "green"
+                        score++
+                    }else{
+                        button.style.backgroundColor = "red"
+                    }
+                })
+            })
+         }
+
+         nextBtn.addEventListener("click" , ()=>{
+            currentQuestionIndex++
+            if(currentQuestionIndex<arr.length){
+                startQuiz()
+            }
+            else{
+                question.innerHTML = "Quizz End !"
+                buttonContainer.innerHTML = ""
+                nextBtn.style.display = "none"
+                result.innerText = `Result : ${score}/${arr.length}`
+            }
+         })
+        startQuiz()
+    </script>
+</body>
+
+</html>
