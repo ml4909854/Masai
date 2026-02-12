@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    
+</style>
+
+<body>
+    <!--Here i am going to create a drag and drop even  -->
+    <div id="container">
+        <div id="leftBox">
+            <li class="list" draggable="true">List 1</li>
+            <li class="list" draggable="true">List 2</li>
+            <li class="list" draggable="true">List 3</li>
+            <li class="list" draggable="true">List 4</li>
+        </div>
+        <div id="rightBox">
+
+        </div>
+    </div>
+
+    <script>
+       const rightBox = document.getElementById("rightBox")
+const leftBox = document.getElementById("leftBox")
+const lists = document.getElementsByClassName("list")
+
+let selected = null
+
+// drag start
+for (let list of lists) {
+    list.addEventListener("dragstart", (e) => {
+        selected = e.target
+    })
+}
+
+// allow drop
+rightBox.addEventListener("dragover", (e) => e.preventDefault())
+leftBox.addEventListener("dragover", (e) => e.preventDefault())
+
+// drop
+rightBox.addEventListener("drop", () => {
+    if (selected) {
+        rightBox.appendChild(selected)
+        selected = null
+    }
+})
+
+leftBox.addEventListener("drop", () => {
+    if (selected) {
+        leftBox.appendChild(selected)
+        selected = null
+    }
+})
+
+    </script>
+</body>
+
+</html>
