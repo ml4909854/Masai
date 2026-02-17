@@ -1,0 +1,8 @@
+
+// one to one relationship
+// user and its profile has an example of one to one relationship
+// one user has only one profile
+
+// one to many relationship 
+// user and its order has an example of one to many relationship
+// one user can order many product
