@@ -174,3 +174,10 @@
 // console.log(nested)
 // console.log(newArr)
 
+
+
+// Dsa for pattern printing
+
+
+// square pattern//
+
