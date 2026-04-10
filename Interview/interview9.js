@@ -91,3 +91,12 @@
 
 // console.log([] == "")
 // console.log("" == [])
+
+// function print(x){
+//     console.log(~~x)
+// }
+// print(5.6)
+
+let arr = [2000 , 4 , 300 , 1  , 50 , 3]
+arr.sort((a , b)=>a-b)
+console.log(arr)
