@@ -7,5 +7,37 @@
 </head>
 <body>
     <Marquee>Hello world</Marquee>
+
+    <dl>
+  <dt>HTML</dt>
+  <dd>Used to create web pages</dd>
+
+  <dt>CSS</dt>
+  <dd>Used for styling</dd>
+</dl>
+
+<input list="browsers">
+
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Edge">
+</datalist>
+
+<div class="scroll-text">Hello Mahesh 👋</div>
+
+<style>
+.scroll-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: scroll 5s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+</style>
 </body>
 </html>
