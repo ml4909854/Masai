@@ -11,6 +11,11 @@
 
     // 
 
-    let arr = [1 , 2,3 ,4,5 ]
-    let res = arr.filter((ele)=>ele=6)
-    console.log(res)
+    // let arr = [1 , 2,3 ,4,5 ]
+    // let res = arr.filter((ele)=>ele=6)
+    // console.log(res)
+
+    let str = "mahesh"
+    
+    
+    

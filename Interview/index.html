@@ -38,6 +38,27 @@
   from { transform: translateX(100%); }
   to { transform: translateX(-100%); }
 }
+
+
 </style>
+
+<div id="parent" style="width: 500px; height: 100px; border: 2px solid red;">
+   <button id="child"> click me </button>
+</div>
+
+
 </body>
+
+<script>
+  const parent = document.getElementById("parent")
+  const child = document.getElementById("child")
+
+  parent.addEventListener("click" , ()=>{
+    console.log("parent click")
+  })
+  child.addEventListener("click" , ()=>{
+    console.log("child click")
+  })
+
+</script>
 </html>
