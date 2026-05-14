@@ -23,13 +23,25 @@
 // // counter()
 // // counter()
 
-// function outer(){
-//     let counter = 0 
-//     function inner(){
-//         console.log(counter+=1)
-//     }
-//     return inner
+// // function outer(){
+// //     let counter = 0 
+// //     function inner(){
+// //         console.log(counter+=1)
+// //     }
+// //     return inner
+// // }
+// //    let myFunction = outer() // outer function called here
+// //    myFunction()
+// //    myFunction()
+
+// function createCounter() {
+//     let count = 0;  // Private variable
+    
+//     return function() {
+//         count++;     // Remembers count
+//         return count;
+//     };
 // }
-//    let myFunction = outer() // outer function called here
-//    myFunction()
-//    myFunction()
+
+// let myFunction = createCounter()
+// console.log(myFunction())44
