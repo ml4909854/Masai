@@ -4,7 +4,7 @@
   "description": "",
   "main": "Interveiw1.js",
   "scripts": {
-    "start": "nodemon interview24.js"
+    "start": "nodemon interview25.js"
   },
   "keywords": [],
   "author": "",

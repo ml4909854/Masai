@@ -6,59 +6,142 @@
     <title>Document</title>
 </head>
 <body>
-    <Marquee>Hello world</Marquee>
+  
 
-    <dl>
-  <dt>HTML</dt>
-  <dd>Used to create web pages</dd>
+<blockquote>
+Hi My name is mahesh Kumar
+</blockquote>
+<blockquote cite="https://example.com/article">
+    This text is quoted from another website.
+</blockquote>
 
-  <dt>CSS</dt>
-  <dd>Used for styling</dd>
+<p>this is paragraph</p>
+<p>My favorite book is <cite>Rich Dad Poor Dad</cite>.</p>
+
+<p>He said <q>Hello there</q> and left.</p>
+<dl>
+    <dt>HTML</dt>
+    <dd>HyperText Markup Language</dd>
+
+    <dt>CSS</dt>
+    <dd>Used for styling web pages</dd>
 </dl>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>25</td>
+    </tr>
+</table>
+<tr>
+    <th scope="row">Product</th>
+    <td>$10</td>
+</tr>
 
-<input list="browsers">
+<table>
+    <thead>
+        <tr><th>Month</th><th>Sales</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Jan</td><td>$100</td></tr>
+        <tr><td>Feb</td><td>$150</td></tr>
+    </tbody>
+    <tfoot>
+        <tr><td>Total</td><td>$250</td></tr>
+    </tfoot>
+</table>
 
+<select name="country">
+    <option value="us">United States</option>
+    <option value="ca">Canada</option>
+    <option value="uk">United Kingdom</option>
+</select>
+<select multiple size="3">
+    <option>Option 1</option>
+    <option selected>Option 2 (pre-selected)</option>
+    <option>Option 3</option>
+</select>
+<textarea name="message" rows="5" cols="30">
+Default text here
+</textarea>
+<fieldset>
+    <legend>Personal Information</legend>
+    <label>Name: <input type="text"></label>
+    <label>Email: <input type="email"></label>
+</fieldset>
+<fieldset>
+    <legend>Payment Method</legend>
+    <label><input type="radio" name="payment"> Credit Card</label>
+    <label><input type="radio" name="payment"> PayPal</label>
+</fieldset>
+<input list="browsers" name="browser">
 <datalist id="browsers">
-  <option value="Chrome">
-  <option value="Firefox">
-  <option value="Edge">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+    <option value="Edge">
 </datalist>
+<p>Published on <time datetime="2025-01-15">Jan 15, 2025</time></p>
+<progress value="60" max="100"></progress>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Upload Progress</title>
+</head>
+<body>
 
-<div class="scroll-text">Hello Mahesh 👋</div>
+    <input type="file" id="videoFile">
 
-<style>
-.scroll-text {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: scroll 5s linear infinite;
-}
+    <br><br>
 
-@keyframes scroll {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
-}
+    <progress id="progressBar" value="0" max="100"></progress>
+
+    <p id="percent">0%</p>
+
+    <script>
+
+        let fileInput = document.getElementById("videoFile");
+        let progressBar = document.getElementById("progressBar");
+        let percentText = document.getElementById("percent");
+
+        fileInput.addEventListener("change", function () {
+
+            let file = fileInput.files[0];
+
+            let formData = new FormData();
+            formData.append("video", file);
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "upload.php");
+
+            // Upload progress event
+            xhr.upload.addEventListener("progress", function (event) {
+
+                if (event.lengthComputable) {
+
+                    let percent = (event.loaded / event.total) * 100;
+
+                    progressBar.value = percent;
+
+                    percentText.innerText = Math.floor(percent) + "%";
+                }
+            });
+
+            xhr.send(formData);
+        });
+
+    </script>
+
+</body>
+</html>
 
 
-</style>
 
-<div id="parent" style="width: 500px; height: 100px; border: 2px solid red;">
-   <button id="child"> click me </button>
-</div>
 
 
 </body>
-
-<script>
-  const parent = document.getElementById("parent")
-  const child = document.getElementById("child")
-
-  parent.addEventListener("click" , ()=>{
-    console.log("parent click")
-  })
-  child.addEventListener("click" , ()=>{
-    console.log("child click")
-  })
-
-</script>
 </html>
